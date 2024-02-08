@@ -31,3 +31,18 @@ button {
     letter-spacing: 1px;
     cursor: pointer;
 }
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+li {
+    margin-top: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #5f9341;
+}
