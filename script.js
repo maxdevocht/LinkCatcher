@@ -6,6 +6,11 @@ const ulEl = document.getElementById("ul-el")
 
 let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
 
+if (leadsFromLocalStorage) {
+    myLeads = leadsFromLocalStorage
+    renderLeads()
+}
+
 inputBtn.addEventListener("click", function(){
     // Controleer of de URL het protocol bevat
     if (!inputEl.value.startsWith("http://") && !inputEl.value.startsWith("https://")) {
