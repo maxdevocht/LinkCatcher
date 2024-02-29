@@ -25,6 +25,12 @@ inputBtn.addEventListener("click", function(){
     console.log( localStorage.getItem("myLeads") )
 })
 
+deleteBtn.addEventListener("dblclick", function(){
+    localStorage.clear()
+    myLeads = []
+    renderLeads()
+})
+
 function renderLeads() {
     let listItems = ""
     for (let i = 0; i < myLeads.length; i++) {
