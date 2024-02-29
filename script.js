@@ -40,9 +40,14 @@ inputBtn.addEventListener("click", function(){
 
 tabBtn.addEventListener("click", function(){    
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-        myLeads.push(tabs[0].url)
-        localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-        render(myLeads)
+        if (tabs && tabs.length > 0) {
+            myLeads.push(tabs[0].url);
+            localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+            render(myLeads)
+        } else {
+            // Handle the case where there are no active tabs
+            console.error("No active tab found");
+        }
     })
 })
 
